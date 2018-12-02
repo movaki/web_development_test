@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Тестовое задание</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="reset.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function() {
+        	
+            $('#date').datepicker();
+        			
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="logo">
+            </div>
+            <div class="contact">
+                <span>8-800-100-5005</span>
+                <br>
+                <span>+7(3452)522-300</span>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li class="list-item"><a href="#" class="link">Кредитные карты</a></li>
+                <li class="list-item active"><a href="#" class="link">Вклады</a></li>
+                <li class="list-item"><a href="#" class="link">Дебетовая карта</a></li>
+                <li class="list-item"><a href="#" class="link">Страхование</a></li>
+                <li class="list-item"><a href="#" class="link">Друзья</a></li>
+                <li class="list-item"><a href="#" class="link">Интернет банк</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <ul class="breadcrumbs">
+            <li><a href="#">Главная</a></li><li><a href="#">Вклады</a></li><li>Калькулятор</li>
+        </ul>
+
+        <section>
+            <div class="container">
+                <h1>Калькулятор</h1>
+                <form method="post" action="calc.php" enctype="multipart/form-data">
+                    <ul class="flex-outer">
+                        <li>
+                            <label for="date">Дата оформления вклада</label>
+                            <input id="date" name="date" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"/>
+                        </li>
+                        <li>
+                            <label for="summ">Сумма вклада</label>
+                            <input type="text" id="summ" name="summ" required>
+                            <div>
+                                <input id="rangeSumm" value="5000" type="range" min="1000" max="3000000" step="1000">
+                                <div class="range"><span class="left">1 тыс.руб</span><span class="right">3000000</span>
+                                </div>
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <label for="time">Срок вклада</label>
+                            <select name="time">
+                              <option selected value="1">1 год</option>
+                              <option value="2">2 года</option>
+                              <option value="3">3 года</option>
+                              <option value="4">4 года</option>
+                              <option value="5">5 лет</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="sum">Пополнение вклада</label>
+                            <div class="radio-btn">
+                                <label><input type="radio" name="isCap" value="yes" checked required>Да</label>
+                                <label><input type="radio" name="isCap" value="no"> Нет </label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="summadd">Сумма пополнения вклада</label>
+                            <input type="text" id="summadd" name="summadd">
+
+                            <div>
+                                <input type="range" min="1000" max="3000000" step="1000" >
+                                <div class="range"><span class="left">1 тыс.руб</span><span class="right">3000000</span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <button type="submit" name="send" value="test">Рассчитать</button>
+                            <div class="result"><span>Результат: </span><samp></samp>
+                                <div>
+                        </li>
+                    </ul>
+                </form>
+                </div>
+        </section>
+
+
+    </main>
+    <footer>
+        <ul class="footer-menu">
+            <li><a href="#" class="">Кредитные карты</a></li>
+            <li><a href="#" class="">Вклады</a></li>
+            <li><a href="#" class="">Дебетовая карта</a></li>
+            <li><a href="#" class="">Страхование</a></li>
+            <li><a href="#" class="">Друзья</a></li>
+            <li><a href="#" class="">Интернет банк</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

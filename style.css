@@ -1,0 +1,264 @@
+*{
+    box-sizing: border-box;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: verdana, arial, sans-serif;
+}
+body {
+    font-size: 1.1em;
+    padding: 1em;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    flex: 0 0 5em;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+header .contact {
+    color:#eb5017;
+    margin-right: 10px;
+}
+
+/*----------------------- Горизонтальное меню ------------------------------ */
+.menu {
+    padding: 5px;
+    display: flex;
+    margin-bottom: 5px;
+}
+.list-item {
+    height: 45px;
+    flex: 1 1 auto;
+    background-color: #231f20;
+    list-style: none;
+    transition: all .7s ease;
+    border-left:1px solid #eb5017;
+    text-align:center;
+    padding: 13px 0;
+}
+.list-item:first-child {
+    border:none;
+}
+.menu .active {
+    background-color: #eb5017;
+}
+.list-item:hover {
+    background-color: #eb5017;
+}
+.link {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*-----------------------Основной блок------------------------------ */
+
+
+main {
+    flex: 1 1 auto;
+    padding: 0 20px;
+    flex-direction: row;
+    min-height: 100%;
+}
+main h1 {
+    margin-left: 70px;
+    color:#eb5017;
+    font-size: 1.5em;
+}
+
+section {
+    background-color: #f2f2f2;
+    max-width: 650px;
+    padding: 1em;
+    margin: 15px 0;
+}
+
+/*----------------------- "Хлебный крошки" ------------------------------ */
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
+}
+.breadcrumbs li {
+    font-size: 0.8em;
+    display: inline-block;
+}
+.breadcrumbs li a {
+    color:#000;
+}
+.breadcrumbs li a:hover {
+    text-decoration: none;
+}
+.breadcrumbs li::before {
+    content: '-';
+}
+.breadcrumbs li:first-child::before {
+    content: '';
+}
+
+/*----------------------- Форма ------------------------------ */
+.flex-outer {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+.flex-outer li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.flex-outer > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+.flex-outer li label {
+    text-align: right;
+    font-size: 14px;
+}
+.flex-outer > li > label {
+    flex: 1 0 120px;
+    max-width: 200px;
+}
+.flex-outer > li > label + * {
+    flex: none;
+    width:95px;
+    height: 20px;
+    margin:0 25px;
+}
+.flex-outer > li > div.radio-btn {
+    width: 130px;
+}
+
+/*-----------------------Бегунки ------------------------------ */
+
+input[type='range'] {
+    overflow: hidden;
+    max-width: 200px;
+    -webkit-appearance: none;
+    background-color: #5a5b5c;
+    border: 1px solid white;
+    border-radius: 3px;
+    height: 7px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.25);
+}
+.range {
+    display:flex;
+    justify-content: space-between;
+    font-style:italic;
+    font-size: 10px;
+}
+input[type='range']::-webkit-slider-runnable-track {
+    height: 5px;
+    -webkit-appearance: none;
+    margin-top: -1px;
+}
+input[type='range']::-webkit-slider-thumb {
+    width: 5px;
+    -webkit-appearance: none;
+    height: 6px;
+    cursor: ew-resize;
+    background: #434343;
+    box-shadow: -80px 0 0 80px #669b04;
+}
+input[type="range"]::-moz-range-progress {
+    background-color: #669b04;
+}
+input[type="range"]::-moz-range-track {
+    background-color: #5a5b5c;
+}
+input[type="range"]::-ms-fill-lower {
+    background-color: #669b04;
+}
+input[type="range"]::-ms-fill-upper {
+    background-color: #9a905d;
+}
+
+/* Специальные правила для браузеров на движках WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    height: 5px;
+    width: 5px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+/* Тоже самое для Firefox */
+input[type=range]::-moz-range-thumb {
+    height: 4px;
+    width: 5px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+/* Тоже самое для IE */
+input[type=range]::-ms-thumb {
+    height: 4px;
+    width: 5px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+.result {
+    margin:0 10px;
+    font-size: 0.8em;
+    display:inline-block;
+}
+.result span {
+    color:#395306;
+}
+.flex-outer li button {
+    background: #c5f271;
+    background: -moz-linear-gradient(top, #c5f271 0%, #95ce2b 100%);
+    background: -webkit-linear-gradient(top, #c5f271 0%,#95ce2b 100%);
+    background: linear-gradient(to bottom, #c5f271 0%,#95ce2b 100%);
+    padding: 8px 16px;
+    border: 2px solid #d5ef86;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+.flex-outer li button:hover {
+    -webkit-box-shadow: -1px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: -1px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: -1px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+/*----------------------- footer ------------------------------ */
+footer {
+    background-color: #231f20;
+    flex: 0 0 auto;
+    min-height: 55px;
+}
+.footer-menu {
+    margin: 15px 65px;
+}
+.footer-menu li {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: 25px;
+}
+.footer-menu li a {
+    color: #fff;
+    text-decoration: underline;
+}
+.footer-menu li a:hover {
+    text-decoration: none;
+}
+
+
+@media (max-width: 1024px) {
+    body {
+       font-size: 0.9em;
+   }
+}
+@media (max-width: 576px) {
+    .menu {
+        flex-direction: column;
+   }
+}
